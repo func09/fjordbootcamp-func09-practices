@@ -1,0 +1,10 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 10022
+PasswordAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+PermitRootLogin no
+SyslogFacility AUTHPRIV
+LogLevel VERBOSE
+UsePAM yes
