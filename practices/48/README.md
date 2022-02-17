@@ -47,3 +47,10 @@ https://backlog.com/ja/git-tutorial/intro/09/
 * CLONE：すでにあるリポジトリを自分のPCに持ってくる（履歴ごと）ことを clone というよ
 * PULL: リポジトリの他の人の変更などを手元に持ってくること
 
+## リモートリポジトリを設定する
+
+* リモートリポジトリに名前をつけられる。（一般的に `origin` を使う）
+* `$ git remote add <name> <url>` で設定ファイルに登録できる。
+* PUSHする
+  * `git push <repository> <refspec>`
+
