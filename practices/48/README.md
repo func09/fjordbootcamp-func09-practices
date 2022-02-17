@@ -42,4 +42,8 @@ git config --global alias.st status
 
 https://backlog.com/ja/git-tutorial/intro/09/
 
-* ローカルリポジトリからリモートリポジトリにコミットする
+* PUSH: ローカルリポジトリからリモートリポジトリにPushする
+  * Pushとはアップロードのようなもの
+* CLONE：すでにあるリポジトリを自分のPCに持ってくる（履歴ごと）ことを clone というよ
+* PULL: リポジトリの他の人の変更などを手元に持ってくること
+
