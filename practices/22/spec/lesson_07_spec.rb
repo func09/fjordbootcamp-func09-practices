@@ -76,6 +76,7 @@ describe "練習問題7" do
     end
 
     example do
+      allow($stdout).to receive(:write)
       expect(dice).to satisfy do |num|
         (1 .. 6).cover?(num)
       end
@@ -97,12 +98,11 @@ describe "練習問題7" do
   # 400を戻り値として返してください
   describe "問6" do
     def price(item:)
-      case item
-      when "コーヒー"
-        300
-      when "カフェラテ"
-        400
-      end
+      items = {
+        "コーヒー" => 300,
+        "カフェラテ" => 400,
+      }
+      items[item]
     end
 
     subject { price(item: item) }
@@ -126,26 +126,16 @@ describe "練習問題7" do
   # sizeが "ショート" の時は +0円、"トール" のときは +50円、"ベンティ" の時は +100円としてください
   describe "問7" do
     def price(item:, size:)
-      total = 
-        case item
-        when "コーヒー"
-          300
-        when "カフェラテ"
-          400
-        else
-          0
-        end
-      
-      case size
-      when "ショート"
-        total += 0
-      when "トール"
-        total += 50
-      when "ベンティ"
-        total += 100
-      end
-      
-      return total
+      items = {
+        "コーヒー" => 300,
+        "カフェラテ" => 400,
+      }
+      sizes = {
+        "ショート" => 0,
+        "トール" => 50,
+        "ベンティ" => 100,
+      }
+      items[item] + sizes[size]
     end
 
     subject { price(item: item, size: size) }
@@ -186,26 +176,16 @@ describe "練習問題7" do
   # 問7 を変更し、sizeが渡されてない時のデフォルト値として "ショート" を設定してください
   describe "問8" do
     def price(item:, size: "ショート")
-      total = 
-        case item
-        when "コーヒー"
-          300
-        when "カフェラテ"
-          400
-        else
-          0
-        end
-      
-      case size
-      when "ショート"
-        total += 0
-      when "トール"
-        total += 50
-      when "ベンティ"
-        total += 100
-      end
-      
-      return total
+      items = {
+        "コーヒー" => 300,
+        "カフェラテ" => 400,
+      }
+      sizes = {
+        "ショート" => 0,
+        "トール" => 50,
+        "ベンティ" => 100,
+      }
+      items[item] + sizes[size]
     end
 
     subject { price(item: item) }
@@ -244,6 +224,7 @@ describe "練習問題7" do
     }
 
     example do
+      allow($stdout).to receive(:write)
       expect {
         subject
       }.not_to raise_error
