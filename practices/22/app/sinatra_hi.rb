@@ -1,5 +1,3 @@
-require 'sinatra'
-
 require "sinatra/base"
 
 class HiApp < Sinatra::Application
